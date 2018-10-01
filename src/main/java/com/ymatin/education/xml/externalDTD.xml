@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE root SYSTEM "F:\Projects\education\src\main\java\com\ymatin\education\xml\DTD\externalDTD.dtd">
+<root>
+    <child_1>
+        <child_2>
+            <child_2_1>dfgfg</child_2_1>
+        </child_2>
+        <child_3>dsdfs</child_3>
+    </child_1>
+    <child_1>
+        <child_2>
+            <child_2_1>dfgg</child_2_1>
+        </child_2>
+    </child_1>
+    <child_5 attr="goodbye">sasd</child_5>
+</root>

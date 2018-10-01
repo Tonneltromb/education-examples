@@ -1,0 +1,7 @@
+<!ELEMENT root (child_1 | child_5)*>
+<!ELEMENT child_1 (#PCDATA | child_2 | child_3)*>
+<!ELEMENT child_2 (child_2_1)>
+<!ELEMENT child_3 (#PCDATA)>
+<!ELEMENT child_2_1 (#PCDATA)>
+<!ELEMENT child_5 (#PCDATA)>
+<!ATTLIST child_5 attr (hello | goodbye) #REQUIRED >
