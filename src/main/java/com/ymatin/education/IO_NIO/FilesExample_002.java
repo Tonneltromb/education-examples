@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,10 +13,13 @@ public class FilesExample_002 {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("F:\\Projects\\tmp\\new.txt");
 
-        Files.write(path, Arrays.asList("Hello!", "Goodbye!"));
+        List<String> listToWrite = Arrays.asList("Hello!", "Goodbye!");
+        List<String> listToWrite1 = Arrays.asList("Good evening!", "Good afternoon");
+
+        Files.write(path, listToWrite);
         readAllBytes(path);
         readAllLines(path);
-        Files.write(path, Arrays.asList("Good evening!", "Good afternoon"));
+        Files.write(path, listToWrite1, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
         readAllBytes(path);
         readAllLines(path);
     }
