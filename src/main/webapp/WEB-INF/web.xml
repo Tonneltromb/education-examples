@@ -10,19 +10,58 @@
         <servlet-class>com.ymatin.education.servlets.simple.LifecycleServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>simpleServlet</servlet-name>
-        <servlet-class>com.ymatin.education.servlets.simple.SimpleServlet</servlet-class>
+        <servlet-name>startServlet</servlet-name>
+        <servlet-class>com.ymatin.education.servlets.simple.StartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>hardcodeServlet</servlet-name>
+        <servlet-class>com.ymatin.education.servlets.simple.HardcodeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>errorHandler</servlet-name>
+        <servlet-class>com.ymatin.education.servlets.simple.ErrorHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>forwardServlet</servlet-name>
+        <servlet-class>com.ymatin.education.servlets.simple.ForwardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>toForwardServlet</servlet-name>
+        <servlet-class>com.ymatin.education.servlets.simple.ToForwardServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>lifecycleServlet</servlet-name>
-        <url-pattern>/lifecycle</url-pattern>
+        <url-pattern>/lc</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>simpleServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>startServlet</servlet-name>
+        <url-pattern>/start</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>hardcodeServlet</servlet-name>
+        <url-pattern>/handle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forwardServlet</servlet-name>
+        <url-pattern>/forward</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>toForwardServlet</servlet-name>
+        <url-pattern>/toForward</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>errorHandler</servlet-name>
+        <url-pattern>/error</url-pattern>
     </servlet-mapping>
 
-
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error</location>
+    </error-page>
 
 </web-app>

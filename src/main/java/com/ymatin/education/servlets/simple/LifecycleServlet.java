@@ -1,5 +1,6 @@
 package com.ymatin.education.servlets.simple;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,12 +11,18 @@ import java.io.PrintWriter;
 public class LifecycleServlet extends HttpServlet {
 
     public LifecycleServlet() {
-        log("constructor");
+        System.out.println("constructor");
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        System.out.println("init method with config");
+        super.init(config);
     }
 
     @Override
     public void init() throws ServletException {
-        System.err.println("init method");
+        System.out.println("init method");
         super.init();
     }
 
