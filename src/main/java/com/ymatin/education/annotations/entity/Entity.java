@@ -9,16 +9,18 @@ public class Entity {
     //Fields
 
 
-    @NotNullField
-    final private String stringField = "default";
+//    @NotNullField
+    private String stringField = "default";
 
+    @NotNullField
+    private int intField = 1;
     // Constructors
 
     public Entity() {}
 
-//    public Entity(String stringField) {
-//        this.stringField = stringField;
-//    }
+    public Entity(String stringField) {
+        this.stringField = stringField;
+    }
 
     //Some business methods
 
@@ -32,8 +34,8 @@ public class Entity {
         return stringField;
     }
 
-//    public void setStringField(String stringField) {
-//        this.stringField = stringField;
-//    }
+    public void setStringField(String stringField) {
+        this.stringField = stringField;
+    }
 
 }

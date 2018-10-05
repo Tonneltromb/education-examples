@@ -25,26 +25,29 @@ public class NotNullFieldAnnotationProcessor extends AbstractProcessor {
 
             final VariableElement ve = (VariableElement) e;
             Element enclosingElement = e.getEnclosingElement();
-            Class<? extends Element> aClass = enclosingElement.getClass();
             try {
+                Class<?> aClass = Class.forName(enclosingElement.toString());
+                System.out.println("class " + aClass.getName());
+
                 for (Field field : aClass.getDeclaredFields()) {
-                    System.out.println(field.getName());
+                    System.out.println(field.getType());
+
+//                field.setAccessible(true);
+//                    Object o = field.get(aClass);
+//                String o = (String) field.get(aClass);
+//                System.out.println(o != null);
                 }
 
-//                Field field = aClass.getField(e.getSimpleName().toString());
-//                field.setAccessible(true);
-//                Object o = field.get(aClass);
-//                System.out.println(o != null);
-            } catch (Exception e1) {
+            } catch (ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
 
-            System.err.println("element " + e.asType());
-            System.err.println("element " + e.getClass());
-            System.err.println("element " + enclosingElement);
-            System.err.println("element " + ve.getConstantValue());
-            System.err.println("element " + e.getKind());
-            System.err.println("element " + e.getSimpleName());
+            System.err.println("element e.asType() " + e.asType());
+            System.err.println("element e.getClass() " + e.getClass());
+            System.err.println("element enclosingElement " + enclosingElement);
+            System.err.println("element ve.getConstantValue() " + ve.getConstantValue());
+            System.err.println("element e.getKind() " + e.getKind());
+            System.err.println("element e.getSimpleName() " + e.getSimpleName());
 //
 //            if (!e.asType().getKind().isPrimitive()) {
 //            }
