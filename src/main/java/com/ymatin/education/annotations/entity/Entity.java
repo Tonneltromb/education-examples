@@ -1,6 +1,7 @@
 package com.ymatin.education.annotations.entity;
 
 import com.ymatin.education.annotations.ClassNameAnnotation;
+import com.ymatin.education.annotations.NotNullField;
 
 @ClassNameAnnotation(value = "EntityChild")
 public class Entity {
@@ -8,15 +9,16 @@ public class Entity {
     //Fields
 
 
-    private String stringField;
+    @NotNullField
+    final private String stringField = "default";
 
     // Constructors
 
     public Entity() {}
 
-    public Entity(String stringField) {
-        this.stringField = stringField;
-    }
+//    public Entity(String stringField) {
+//        this.stringField = stringField;
+//    }
 
     //Some business methods
 
@@ -30,8 +32,8 @@ public class Entity {
         return stringField;
     }
 
-    public void setStringField(String stringField) {
-        this.stringField = stringField;
-    }
+//    public void setStringField(String stringField) {
+//        this.stringField = stringField;
+//    }
 
 }
