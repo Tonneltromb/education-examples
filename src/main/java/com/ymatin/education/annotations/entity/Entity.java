@@ -1,15 +1,17 @@
 package com.ymatin.education.annotations.entity;
 
-import com.ymatin.education.annotations.ClassNameAnnotation;
-import com.ymatin.education.annotations.NotNullField;
+import com.ymatin.education.annotations.*;
 
 @ClassNameAnnotation(value = "EntityChild")
+@RepeatableAnnotation
+@RepeatableAnnotation
 public class Entity {
 
     //Fields
 
 
 //    @NotNullField
+    @Initials(name = "X", lastName = "Y")
     private String stringField = "default";
 
     @NotNullField
@@ -24,6 +26,7 @@ public class Entity {
 
     //Some business methods
 
+    @LengthLimit(min = 1, max = 6)
     public void toUpperCase(String string) {
         string = string.toUpperCase();
     }

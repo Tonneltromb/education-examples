@@ -9,7 +9,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
-public class FilesExample_002 {
+public class FilesReadAllExample {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("F:\\Projects\\tmp\\new.txt");
 

@@ -10,7 +10,7 @@ import java.nio.file.attribute.AclFileAttributeView;
 import java.nio.file.attribute.DosFileAttributeView;
 import java.util.List;
 
-public class FileExample {
+public class FilesExample {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get(".\\src\\main\\java\\IO_NIO\\new.txt");
         Path path1 = Paths.get("F:\\Projects\\education\\src\\main\\java\\IO_NIO\\new.txt");
